@@ -3,17 +3,19 @@ kind: Deployment
 metadata:
   name: {{ .Values.appName }}
   labels:
-    app: {{ .Values.appName }}
+    app.kubernetes.io/name: {{ .Values.appName }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+      app.kubernetes.io/name: {{ .Values.appName }}
       tier: frontend
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
+        app.kubernetes.io/part-of: keptndemoapp 
+        app.kubernetes.io/name: {{ .Values.appName }}
+        app.kubernetes.io/version: 0.0.1
         tier: frontend
     spec: # Pod spec
       containers:
