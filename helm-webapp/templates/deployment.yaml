@@ -16,7 +16,6 @@ spec:
         app.kubernetes.io/part-of: keptndemoapp 
         app.kubernetes.io/name: {{ .Values.appName }}
         app.kubernetes.io/version: 0.0.1
-        tier: frontend
     spec: # Pod spec
       containers:
       - name: mycontainer
