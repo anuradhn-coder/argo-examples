@@ -14,5 +14,4 @@ spec:
     name: flask
   selector:
     app: {{ .Values.appName }}
-    tier: frontend
   type: NodePort
